@@ -46,12 +46,8 @@ sudo apt install node-gyp
 sudo apt install npm
 ```
 
-# Create a new application
+# Run application in developer environment
   ```sh
-  $ ng new mySuperApplication
-  ```
-  Test, if it works:
-  ```sh
-  $ cd mySuperApplication
+  $ cd angularDemo
   $ ng serve
   ```
