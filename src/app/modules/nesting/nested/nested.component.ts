@@ -1,28 +1,35 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
     selector: 'app-nested',
     templateUrl: 'nested.component.html',
     styles: []
 })
-export class NestedComponent implements OnInit {
+export class NestedComponent {
 
-    @Input() someNestedVariable;
-    @Input() twoWayBindingNestedVariable;
-    @Output() twoWayBindingNestedVariableChange = new EventEmitter<string>();
+    @Input() firstVariableNested;
+
+    @Input() secondVariableNested;
+    @Output() secondVariableNestedChange = new EventEmitter<string>();
+
     @Output() buttonClicked = new EventEmitter<string>();
-
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
 
     onButtonClick(buttonName: string) {
         this.buttonClicked.emit(buttonName);
     }
 
-    onTwoWayBindingNestedVariableChange() {
-        this.twoWayBindingNestedVariableChange.emit(this.twoWayBindingNestedVariable);
+    // getter
+    get secondVariableLocal() {
+        return this.secondVariableNested;
+    }
+
+    // setter
+    set secondVariableLocal(newValue: string) {
+        this.secondVariableNested = newValue;
+        this.secondVariableNestedChange.emit(this.secondVariableNested);
+    }
+
+    onSecondVariableNestedChange() {
+        this.secondVariableNestedChange.emit(this.secondVariableNested);
     }
 }

@@ -2,16 +2,22 @@
     <div class="card-header">Nested component</div>
     <div class="card-body">
         <div class="p-3">
-            Some Nested Variable value: <b>{{ someNestedVariable }}</b>
+            One Way Binding Variable value: <input [(ngModel)]="firstVariableNested">
+            ...same variable - two way binding [()]: <input [(ngModel)]="firstVariableNested">
         </div>
         <div class="p-3">
-            Two Way Binding Variable value: <input [(ngModel)]="twoWayBindingNestedVariable" (keyup)="onTwoWayBindingNestedVariableChange()">
+            Two Way Binding Variable value: <input [(ngModel)]="secondVariableLocal"> (using helper variable with get and set)
         </div>
-        <div class="btn-group">
+        <div class="p-3">
+            Two Way Binding Variable value: <input [(ngModel)]="secondVariableNested" (keyup)="onSecondVariableNestedChange()"> (using 'onkeyup')
+        </div>
+        <div class="btn-group p-3">
+            One Way Binding ():
             <button class="btn btn-outline-success" (click)="onButtonClick('Button 1')">Click me (1)</button>
             <button class="btn btn-outline-success" (click)="onButtonClick('Button 2')">Click me (2)</button>
             <button class="btn btn-outline-success" (click)="onButtonClick('Button 3')">Click me (3)</button>
             <button class="btn btn-outline-success" (click)="onButtonClick('Button 4')">Click me (4)</button>
+            <button class="btn btn-outline-secondary" (click)="onButtonClick('')">Clear Button Info</button>
         </div>
     </div>
 </div>
