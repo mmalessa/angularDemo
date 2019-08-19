@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenubarComponent implements OnInit {
 
     public menuItems = [
+        {label: 'Home', url: '/'},
         {label: 'Nesting', url: '/nesting'}
     ];
     constructor() { }

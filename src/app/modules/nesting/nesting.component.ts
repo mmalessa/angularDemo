@@ -1,14 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'app-nesting',
-  templateUrl: './nesting.component.html',
+    selector: 'app-nesting',
+    templateUrl: './nesting.component.html',
 })
 export class NestingComponent implements OnInit {
 
-  constructor() { }
+    public someVariable: string;
+    public twoWayBindingVariable: string;
+    public nestedButtonClickedInfo: string;
 
-  ngOnInit() {
-  }
+    constructor() {
+    }
+
+    ngOnInit() {
+    }
+
+    onNestedButtonClick(buttonName: string) {
+        this.nestedButtonClickedInfo = buttonName;
+    }
 
 }

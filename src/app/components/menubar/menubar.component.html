@@ -1,5 +1,5 @@
-<ul>
-    <li *ngFor="let menuItem of menuItems">
-        <a [routerLink]="[menuItem.url]">{{ menuItem.label }}</a>
+<ul class="nav">
+    <li *ngFor="let menuItem of menuItems" class="nav-item">
+        <a [routerLink]="[menuItem.url]" class="nav-link">{{ menuItem.label }}</a>
     </li>
 </ul>

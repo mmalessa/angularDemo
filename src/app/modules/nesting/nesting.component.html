@@ -1,1 +1,27 @@
-<p>nesting works!</p>
+<div class="card">
+    <div class="card-header">Nesting base component</div>
+
+    <div class="card-body">
+        <div class="row p-3">
+            <div class="col-12">
+                Some Variable Value: <input [(ngModel)]="someVariable">
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col-12">
+                Two Way Binding Variable value: <input [(ngModel)]="twoWayBindingVariable">
+                ...same variable: <input [(ngModel)]="twoWayBindingVariable">
+            </div>
+        </div>
+        <div class="row p-3">
+            <div class="col-12">
+                Nested Button Clicked info: <b>{{ nestedButtonClickedInfo }}</b>
+            </div>
+        </div>
+        <app-nested
+            [someNestedVariable]="someVariable"
+            [(twoWayBindingNestedVariable)]="twoWayBindingVariable"
+            (buttonClicked)="onNestedButtonClick($event)"
+        ></app-nested>
+    </div>
+</div>
